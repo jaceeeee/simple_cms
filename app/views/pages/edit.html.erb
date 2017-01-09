@@ -1,0 +1,17 @@
+<% @page_title = "Edit '#{@page.name}'" %>
+<%= link_to("<< Back to index", pages_path(:subject_id => @subject.id), :class => 'back-link')
+%>
+
+<div class="pages edit">
+	<h2>Update Page</h2>
+	<%= form_for(@page, :url => page_path(@page, :subject_id => @subject.id), :method => 'patch') do |f| %>
+	<!--You can ignore ":url => pages_path, :method => 'patch'" because it is automatically done by rails-->
+
+		<!-- rendering partial layouts -->
+		<%= render(:partial => 'form', :locals => {:f => f}) %>
+		
+		<div class="form-buttons">
+			<%= f.submit("Update Page") %>
+		</div>
+	<% end %>
+</div>

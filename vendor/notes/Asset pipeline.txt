@@ -1,0 +1,37 @@
+Asset pipeline
+	Benefits
+		- concatenates CSS and JavaScript files
+		- compresses and minifies CSS and JavaScript
+		- precompiles CSS and JavaScript
+		- Allows writing assets in other languages (Sass, CoffeeScript, ERB)
+		- Adds asset fingerprinting
+
+	Files in Public Directory
+		They won't be found in the 'public' directory; instead, they'll be found in the 'app/assets' directory. 
+		For example:
+			app/assets/images
+			app/assets/javascripts
+			app/assets/stylesheets
+
+		But if stuck in 'public', they'll lose the advantages above
+
+	Manifest Files
+		- contain directives for including asset files
+		- Loaded, processed, concatenated, compressed
+		- Serve one file, but develop with many files
+
+	Development vs Production
+		- Development
+			- Skips concatenation
+			- Skips compression
+			- Skips fingerprinting
+			- Does file processing
+		- Production
+			- Does not do any asset processing
+			- Assumes that assets have been precompiled
+
+	Development vs. Production
+		- Precompilation	
+			export RAILS_ENV=production
+			bundle exec rails assets:precompile
+			

@@ -1,0 +1,16 @@
+<% @page_title = "Create New Subject" %>
+<%= link_to("<< Back to index", subjects_path, :class => 'back-link')
+%>
+
+<div class="subjects new">
+	<h2>Create Subject</h2>
+	<%= form_for(@subject, :url => subjects_path, :method => 'post') do |f| %>
+	<!--You can ignore ":url => subjects_path", :method => 'post'" because it is automatically done by rails-->
+		<!-- rendering partial layouts -->
+		<%= render(:partial => 'form', :locals => {:f => f}) %>
+
+		<div class="form-buttons">
+			<%= f.submit("Create Subject") %>
+		</div>
+	<% end %>
+</div>

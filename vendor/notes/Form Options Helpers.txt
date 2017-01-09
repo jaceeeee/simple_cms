@@ -1,0 +1,25 @@
+Form Options Helpers
+	select Helper
+
+	select(object, attribute, choices, options, html_options)
+
+	Options:
+		:selected => object.attribute
+		:include_blank => false
+		:prompt => false
+		:disabled => false
+
+	For example:
+		form_for(@section) do |f|
+			#Range
+			f.select( :position, 1..5 )
+
+			#Array
+			f.select( :content_type, ['text', 'HTML'] )
+
+			#Hash
+			f.select( :visible, { "Visible" => 1, "Hidden" => 2 } )
+
+			#Array of arrays
+			f.select( :page_id, Page.all.map { |p| [p.name, p.id] } )
+		end

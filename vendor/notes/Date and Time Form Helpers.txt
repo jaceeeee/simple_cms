@@ -1,0 +1,33 @@
+Date and Time Form Helpers
+	There are 3 main helpers
+
+	date_select(object, attribute, options, html_options)
+
+	Options:
+		:start_year => Time.now.year-5
+		:end_year => Time.now.year+5
+		:order => [:year, :month, :day]
+		:discard_year => false
+		:discard_month => false
+		:discard_day => false
+		:include_blank => false
+		:prompt => false
+		:use_month_numbers => false
+		:add_month_numbers => false
+		:use_short_month => false
+		:date_separator => ""
+
+	time_select(object, attribute, options, html_options)
+
+	Options:
+		:include_seconds => false
+		:minute_step => 1
+		:include_blank => false
+		:prompt => false
+		:time_separator => ":"
+
+	datetime_select(object, attribute, options, html_options)
+
+	Options:
+		# all date_select and time_select options
+		:datetime_separator => "-"

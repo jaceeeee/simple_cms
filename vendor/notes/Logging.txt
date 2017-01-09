@@ -1,0 +1,32 @@
+Logging
+	
+	Server Logs vs Application Logs
+
+		- Log files
+			- log/development.rb
+			- log/production.rb
+			- log/test.rb
+		- Log level configuration
+			- config/environments/development.rb
+				# config.log_level = :debug
+			- config/environments/production.rb
+				# config.log_level = :info
+
+		Log Levels
+							:debug		:info		:warn		:error 		:fatal
+		SQL					   /
+		Request Details		   /		  /
+		Render Details         /		  /			  
+		Deprecations           /		  /			  /		
+		Errors				   /		  /			  /			   /		   /
+
+
+		Clear log files
+
+			# rails log clear
+
+			logger.debug("The name is #{@subject.name}")
+			logger.info("Starting the subject update...")
+			logger.warn("Invalid log in by #{params[:username]}")
+			logger.error("Page #{params[:id]} not found")
+			logger.fatal("Necessary RubyGem not loaded")

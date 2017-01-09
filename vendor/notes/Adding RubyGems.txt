@@ -1,0 +1,12 @@
+
+	RubyGem 				Description
+
+	acts_as_list			Manage objects with positions
+	will_paginate			Pagination
+	exception_notification	Send emails when errors occur
+	paperclip				Manage files uploaded via web forms
+	carrierwave				Manage files uploaded via web forms
+	delayed_job				Queue tasks to run later
+	friendly_id				Semantic URLs
+	activemerchant			Credit card processing
+	acts_as_list			Sorting functionality

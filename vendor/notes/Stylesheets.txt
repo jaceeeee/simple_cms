@@ -1,0 +1,21 @@
+Stylesheets
+	- Write stylesheets
+	- List stylesheet in manifest
+	- Add manifest to asset precompile list
+	- Include a stylesheet link tag in HTML
+
+
+	Write stylesheets
+		- Location
+			With asset pipeline: /app/assets/stylesheets
+			Without asset pipeline: /public/stylesheets
+		- File name
+			Should end in ".css"; Sass files end in ".css.scss"
+
+		What is Sass?
+			- "Syntactically Awesome Stylesheets"
+			- Scripting language which is interpreted into CSS
+			- Similar to CSS but with extra features
+				Nested rules, variables, mixins, selector inheritance
+			- http://sass-lang.com
+			- Requires sass-rails gem

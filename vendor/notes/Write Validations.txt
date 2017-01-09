@@ -1,0 +1,10 @@
+Write Validations
+	What to validate?
+		- What are your data concerns?
+			Decide what good and bad data look like
+		- What restrictions does your database impose?
+			Field types, field lengths, and null allowed
+		- What would stop your application from working?
+
+		- Review attributes of each model
+		- Not: IDs, foreign keys, timestamps, booleans

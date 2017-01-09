@@ -1,0 +1,16 @@
+<% @page_title = "Create New Section" %>
+<%= link_to("<< Back to index", sections_path(:page_id => @page.id), :class => 'back-link')
+%>
+
+<div class="sections new">
+	<h2>Create Section</h2>
+	<%= form_for(@section, :url => sections_path(:page_id => @page.id), :method => 'post') do |f| %>
+	<!--You can ignore ":url => sections_path", :method => 'post'" because it is automatically done by rails-->
+		<!-- rendering partial layouts -->
+		<%= render(:partial => 'form', :locals => {:f => f}) %>
+		
+		<div class="form-buttons">
+			<%= f.submit("Create Section") %>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,11 @@
+Custom Validations
+	Syntax
+		# validate :custom_method
+
+		# private
+
+		# def current_method
+		#	if test_case
+		#		errors.add(:attribute, "message")
+		#	end
+		# end

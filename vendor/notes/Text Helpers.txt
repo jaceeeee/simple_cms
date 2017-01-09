@@ -1,0 +1,51 @@
+Text Helpers 
+	- for formatting text in 'html.erb' files
+		- word_wrap
+		- simple_format
+		- truncate
+		- pluralize
+
+	word_wrap
+		text = "Word wrapping is the process of breaking a section of text into lines such that it will fit in the available width of a page, window, or other display area."
+
+		<%= word_wrap(text, :line_width => 30) %>
+
+		<!-- displays word wrapped text 
+			:line_width is 80 by default
+			-->
+
+	simple_format
+		text = "This is a sample text \nwith a line break."
+
+		<%= simple_format(text) %>
+
+		<p> This is sample text \n<br /> with a line break.</p>	
+
+		<!-- two consecutive '\n' will generate a <p> tag, while just one will generate a <br /> tag -->
+
+	truncate
+		text = "This is the song that never ends. It just goes on and on my friends. Some people started singing it not knowing what it was, and they'll continue singing it forever just because..."
+
+		<%= truncate(text, :length => 28) %>
+
+		"This is the song that nev..."
+
+		<!-- notice that the omission string "..." is part of the :length specified (:length => 28) 
+		"..." is default and can be customized. -->
+
+	pluralize
+		<% [0, 1, 2].each do |n| %>
+			<%= pluralize(n, 'product') %> found.<br />
+		<% end %>
+
+		"0 products found."
+		"1 product found."
+		"2 products found."
+		<!-- It is smart about the pluralization rules as well -->
+
+	Other text helpers
+		truncate_words
+		highlight
+		excerpt
+
+

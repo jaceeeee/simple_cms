@@ -1,0 +1,79 @@
+Date and Time Helpers
+	DateTime Calculations Using Integers
+
+	second		seconds
+	minute		minutes
+	hour 		hours
+	day 		days
+	week 		weeks
+	month 		months
+	year 		years
+
+	Time.now + 30.days - 23.minutes
+
+	Calculations from Time.now
+		ago
+			"Time.now - 30.days" can be better expressed as "30.days.ago"
+		from_now
+			"Time.now + 30.days" can better expressed as "30.days.from_now"
+
+	Relative DateTime Calculations
+
+	beginning_of_day			end_of_day
+	beginning_of_week			end_of_week
+	beginning_of_month			end_of_month
+	beginning_of_year			end_of_year
+	yesterday					tomorrow
+	last_week					next_week
+	last_month					next_month
+	last_year					next_year
+
+	Chaining is allowed, like "Time.now.last_year.end_of_month.beginning_of_day"
+
+	Ruby DateTime Formatting
+
+	datetime.strftime( format_string )
+
+	Time.now.strftime("%B %d, %Y %H:%M")
+
+	A guide to these format symbols
+
+	Day
+	%a -- the abbreviated weekday name ("Sun")
+	%A -- the full weekday name ("Sunday")
+
+	Date
+	%d -- day of the month (01..31)
+
+	Month
+	%b -- the abbreviated month name ("Jan")
+	%B -- the full month name ("January")
+	%m -- month of the year (01..12)
+
+	Year
+	%y -- year without a century (00..99)
+	%Y -- year with century
+
+	Time
+	%H -- hour of the day; 24-Hour clock (00..23)
+	%I -- hour of the day; 12-Hour clock (01..12)
+
+	%M -- minute of the hour (00..59)
+
+	%S -- second of the minute(00..60)
+
+	%p -- meridian indicator("AM" or "PM")
+
+	%Z -- time zone name
+
+	datetime.to_s ( format_symbol )
+		For example,
+		Time.now.to_s(:long)
+
+	DateTime Default Formats
+		:db "2016-01-09 13:36:29"
+		:number "20160109133629"
+		:time "13:36"
+		:short "09 Jan 13:36"
+		:long "January 09, 2016 13:36"
+		:long_ordinal "January 9th, 2016 13:36"

@@ -1,0 +1,19 @@
+Form Helpers
+
+	Tag style:
+		<%= text_field_tag('name', params[:name]) %>		
+	Object-aware style:	
+		<%= text_field(:subject, :name) %>
+	Form-builder style:
+		<%= f.text_field(:name) %>
+
+	Other form helpers
+
+		- text_field
+		- password_field
+		- text_area
+		- hidden_field
+		- radio_button
+		- check_box
+		- file_field
+		- label

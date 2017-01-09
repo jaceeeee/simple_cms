@@ -1,0 +1,8 @@
+<% evil_string = "<script>alert('Gotcha!');</script>" %>
+<% good_string = "<strong>Welcome to my site!</strong>" %>
+
+<%= evil_string %> <br />
+<%# raw evil_string <== this lets code through one time %>
+<%# evil_string.html_safe <== this lets code through many times %>
+<%# h evil_string.html_safe <== this bypasses security many times regardless of the 'h' method %>
+<%= good_string %> <br />

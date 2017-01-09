@@ -1,0 +1,29 @@
+Cookies
+	- Cookies allow us to preserve "state."
+	- Web server sends data to the browser, which then saves it in a cookie.
+	- Browser sends cookie data with each future request to that web server.
+
+	Cookies in Rails - work like hashes
+
+	# cookies[:username] = "jsmith"
+
+	# cookies[:username] = {
+	#	:value = "jsmith"
+	#	:expires = 1.week.from_now
+	# }
+
+	# <%= cookies[:username] %> 
+	retrieval of the cookie value
+
+	Limitations of Cookies
+		- Maximum data size: 4K (~4,000 characters)
+		- Reside on the user's computer
+		- Can be deleted, read, or altered
+
+	Advice on Cookies
+		- Use cookies to preserve state and save time
+		- Store only small pieces of data
+		- Do not store model instances
+		- Do not store sensitive data
+		- Do not trust cookie data
+		

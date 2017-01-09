@@ -1,0 +1,28 @@
+Authentication Introduction
+	Why authentication?
+		- Password-protected areas are common
+		- Examining best practices helps avoid costly mistakes
+		- Development choices and security concerns intertwined
+		- Opportunity to explore some important features in Rails
+
+	Ticket Analogy
+		- Purchase ticket for concern 						- Admin creates a user
+		- Wait in line, present ID 							- Visit login page, log in
+		- Get handstamp and enter 							- Mark user as authenticated
+		- Show handstamp, avoid line, and re-enter 			- User requests additional password-protected pages
+		- Wash away handstamp 								- Log-out
+
+	Authentication Step-by-Step
+
+	- Admin creates a user
+		Password is encrypted
+	- Visit login page, log in
+		Searches for username in database
+		Compares password with encrypted password
+	- Mark the user as authenticated
+		Sets session variable to the ID
+		Redirects to a post-login page
+	- User requests additional password-protected pages
+		Session data available with each request
+	- Log out
+		Set user ID in session variable to NULL

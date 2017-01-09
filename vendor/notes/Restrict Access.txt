@@ -1,0 +1,10 @@
+Restrict Access
+
+	- Add before each action to each controller
+		Be careful not to forget any
+
+	- Move before_action to ActionController
+		Must skip_before_action in public controllers
+		
+	- Create AdminAreaController
+		Inherit from ActionController, add before_action

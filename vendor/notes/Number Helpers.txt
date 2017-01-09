@@ -1,0 +1,81 @@
+Number Helpers
+	- format numbers by display in "html.erb" files
+
+	Number Helper Options
+		- :delimiter
+			Delimits thousands; default is ","
+		- :separator
+			Decimal separator; default "."
+		- :precision
+			Decimal places to show; default varies (2-3)
+
+	number_to_currency
+		number_to_currency(34.5)
+
+		<!-- $34.50 -->
+
+		number_to_currency(34.5, :precision => 0, :unit => "kr", :format => "%n %u")
+
+		<!-- 35 kr -->
+
+	number_to_percentage
+		number_to_percentage(34.5)
+
+		<!-- 34.500% -->
+
+		number_to_percentage(34.5, :precision => 1, :separator => ',')
+		
+		<!-- 34,5% -->
+
+	number_with_precision
+		number_with_precision(34.56789)
+		
+		<!-- 34.567 -->
+
+		number_with_precision(34.56789, :precision => 6)
+
+		<!-- 34.567890 -->
+		
+		<!-- also known as "number_to_rounded" -->
+
+	number_with_delimiter
+		number_with_delimiter(3456789)
+		
+		<!-- 3,456,789 -->
+
+		number_with_delimiter(3456789, :delimiter => ' ')
+		
+		<!-- 3 456 789 -->
+
+		<!-- also known as "number_to_delimited" -->
+
+	number_to_human
+		number_to_human(123456789)
+
+		<!-- 123 Million -->
+
+		number_to_human(123456789, :precision => 5)
+
+		<!-- 123.46 Million -->
+
+	number_to_human_size
+		number_to_human_size(1234567)
+
+		<!-- 1.18 MB -->
+
+		number_to_human_size(1234567, :precision => 2)
+		
+		<!-- 1.2 MB -->
+	number_to_phone
+		number_to_phone(1234567890)
+
+		<!-- 123-456-7890 -->
+
+		number_to_phone(1234567890,
+		:area_code => true,
+		:delimiter => ' ',
+		:country_code => 1,
+		:extension => '321')
+
+		<!-- +1 (123) 456 7890 x 321 -->
+

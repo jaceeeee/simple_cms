@@ -1,0 +1,9 @@
+Custom Helpers
+	- Defined inside Ruby modules
+	- Created when generating a controller
+		Must have corresponding file name and module name
+	- Available helper methods in view templates
+	- Useful for
+		- Frequently used code
+		- Storing complex code to simplify view templates
+		- Writing large sections of Ruby code

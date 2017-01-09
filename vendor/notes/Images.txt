@@ -1,0 +1,18 @@
+Images
+	- Location
+		With asset pipeline: /app/assets/images
+		Without asset pipeline: /public/images
+		User-uploaded images: /public/images
+	- Image upload gems
+		PaperClip and CarrierWave 
+
+	#HTML tag
+	<image src="/assets/logo.png" />
+
+	#Rails helper
+	<%= image_tag('logo.png') %>
+
+	<%= image_tag('logo.png', :size => '90x55', :alt => 
+	'logo') %>
+
+	<%= image_tag('logo.png', :width => 90, :height => 55) %>

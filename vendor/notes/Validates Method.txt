@@ -1,0 +1,25 @@
+Validates Method
+	The following were methods previously
+	validates_presence_of :email
+	validates_length_of :email, :maximum => 50
+	validates_uniqueness_of :email
+	validates_format_of :email, :with => EMAIL_REGEX
+	validates_confirmation_of :email
+
+	A better wrapper method choice would be:
+		# validates :email, :presence => true,
+					:length => { :maximum => 50 },
+					:uniqueness => true,
+					:format => { :with => EMAIL_REGEX }
+					:confirmation => true
+
+	Syntax of validates method
+		validates :attribute, :presence => boolean,
+							  :numericality => boolean,
+							  :length => options_hash,
+							  :format => {:with => regex},
+							  :inclusion => {:in => array_or_range},
+							  :exclusion => {:in => array_or_range},
+							  :acceptance => boolean,
+							  :uniqueness => boolean,
+							  :confirmation => boolean

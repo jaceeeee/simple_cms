@@ -1,0 +1,21 @@
+Form Helpers
+	- Simple validation
+		validates_presence_of :name
+	- object.errors
+		Array containing any error added by validations
+
+	Useful methods for Errors
+		object.errors.clear
+		object.errors.size
+		object.errors.each {|attr, msg| ... }
+			# :name, "can't be blank"
+		object.errors.full_messages.each {|msg| ... }
+			# "Name can't be blank"
+
+	Displaying Errors
+		- List errors above the form
+		- Print and highlight errors with each form input
+		- Put output HTML in a partial
+			app/views/application/_error_messages.html.erb
+		- Call with a custom helper
+			error_messages_for(:object)

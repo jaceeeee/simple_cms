@@ -1,0 +1,12 @@
+Public Area
+	- PublicController
+		New layout: "public"
+		Requires no user authentication
+	- index
+		Template with introductory text
+		Default route for site
+	- show
+		Route: localhost:3000/show/some-page-permalink
+		Find visible page matching :permalink
+		If found, display page and its visible sections (sorted)
+		If not found, redirect to the index page

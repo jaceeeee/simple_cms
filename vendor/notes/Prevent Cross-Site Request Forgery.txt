@@ -1,0 +1,28 @@
+Prevent Cross-Site Request Forgery
+	What is Cross-Site Request Forgery?
+	- "CSRF" for short
+	- Type of attack on a website
+	- Exploits user's currently logged-in state to perform
+	  actions which require authentication
+
+	 <img src="http://bank.com/transfer?amt=10000&to=hacker" />
+
+	Prevent CSRF
+		- Require user authentication
+		- Regularly log out inactive users
+		- GET requests should be read-only
+		- Actions that expect POST requests should only respond to POST requests.
+
+	Authenticity Token
+
+	<form action="/subjects/create" method="post">
+		<input name="authenticity_token" type="hidden"
+	value="VpiMYIKNPttLhd2z5gf19U9P67rxYNMG4VMDM48eU8M=" />
+		#... form fields ...
+
+	</form>
+
+	CSRF Token for JavaScript and Ajax
+
+	<%= csrf_meta_tag %>
+	

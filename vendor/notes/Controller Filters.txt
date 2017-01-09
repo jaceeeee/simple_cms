@@ -1,0 +1,44 @@
+Controller Filters
+	- Execute code before or after a controller action
+	- Filter requests before allowing actions
+	- Remove code repetition
+	- Perform "housekeeping" tasks
+
+	Controller Filter Usages
+		- Confirm user authentication
+		- Set variables and default values
+		- Find database objects
+		- Get shopping cart
+
+	Controller Filters
+		# before_action
+		# after_action
+		# around_action
+
+	Sample code:
+		# class PagesController < ApplicationController
+		#	before_action :find_subjects
+		# 	# ...actions...
+
+		#	private
+		#	def find_subjects
+		#		@subjects = Subject.sorted
+		#	end
+
+		# end
+
+	Controller Filters
+		- Filter methods should be declared "private"
+		
+		- Any render or redirect before an action prevents its execution
+		
+		- Specify which actions activate the filter with:
+			:only => [:method1, :method3]
+			:except => [:method2]
+
+		- Filters in ApplicationController are inherited by all controllers.
+
+		- Inherited filters can be skipped.
+			# skip_before_action
+			# skip_after_action
+			# skip_around_action

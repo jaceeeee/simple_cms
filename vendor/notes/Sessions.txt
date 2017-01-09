@@ -1,0 +1,37 @@
+Sessions
+	- Web server sends a session ID to the browser, which then
+	  saves it in a cookie.
+	- Browser sends session ID with each future request to the 
+	  web server.
+	- Web server uses session ID to locate the session file.
+
+	Sessions in Rails
+
+	session[:username] = "jsmith"
+
+	<%= session[:username] = "jsmith"
+
+	Limitations to Sessions
+		- Requires time to retrieve the session file.
+		- Session files accumulate.
+		- Session cookie on the user's computer.
+		- Session cookie can be deleted or hijacked.
+
+	Session Storage
+		- File storage
+		- Database storage
+		- Cookie storage
+
+	Rails Cookie Storage
+		- Default since Rails 3
+		- "super cookies"
+		- Fast; no lookup needed
+		- No setup required
+		- No file or database bloat
+		- Encrypted to prevent reading
+		- Signed to prevent tampering
+		- 4K maximum size
+
+	Session Storage Configuration
+		- config/initializers/session_store.rb
+		- config.secrets.yml

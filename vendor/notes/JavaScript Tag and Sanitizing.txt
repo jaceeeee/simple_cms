@@ -1,0 +1,25 @@
+JavaScript Helpers
+	sample code: 
+	
+		<%= javascript_tag("alert('Are you sure?');") %>
+
+		<%= javascript_do %>
+			alert('Are you sure?');
+		<% end %>
+
+	Sanitizing JavaScript
+
+	<% text = "User submitted text" %>
+
+	<%= javascript_tag("alert('You said: #{text}');") %>
+
+	<% text = "'); alert('Gotcha!" %>
+	
+	<% javascript_tag("alert('You said: #{text}');") %>
+
+	<!-- Use escape_javascript(), j() -->
+
+	<%= javascript_tag("alert('You said: #{j(text)}');" %>
+	
+
+

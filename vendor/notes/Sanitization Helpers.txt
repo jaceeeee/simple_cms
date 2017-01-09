@@ -1,0 +1,42 @@
+Sanitization Helpers
+	Cross Site Scripting (XSS)
+
+	for example:
+		evil_string = "<script>alert('Gotcha!');</script>"
+		<%= evil_string %>
+	This allows hackers to insert code in the html.erb templates, and bypass the security of the application attacked through
+	execution of that code.
+
+	Undesirable HTML
+		comment	= '<p style ="font-size: 100px; color: red;"'>
+		I totally disagree! </p></div>'
+
+		<%= comment %>
+
+		Therefore, escape all user-entered data. Meaning, remove the html functionality of submitted text, if found.
+			- URL parameters
+			- Form parameters
+			- Cookie data
+			- Database data
+		We render the data harmless to the user.
+
+	Escape Methods (Main)
+		- html_escape(), h()
+		- raw()
+		- html_safe
+		
+		- starting with Rails 3, all data is escaped automatically. We whitelist the data if we want the HTML executed.
+
+	Escape Methods (other helpful methods!!)
+		- strip_links( html )
+			# strips out any links it finds in html
+		- strip_tags ( html )
+			# strips all html tags in 'html'
+		- sanitize ( html, options )
+			# allows some html tags to be allowed through security
+
+			sanitize ( @subject.content,
+			:tags => ['p', 'br', 'strong', 'em'],
+			:attributes => ['id', 'class', 'style'] )
+
+	NOTE: We place them all in the views folder, where we can find the *.html.erb files

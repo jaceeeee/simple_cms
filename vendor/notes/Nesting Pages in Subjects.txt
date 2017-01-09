@@ -1,0 +1,11 @@
+Nesting Pages in Subjects
+	- app/views/subjects/index.html.erb
+		Links to PagesController index action
+		Sends :subject_id in link parameters
+	- Pages Controller
+		before_action finds subject
+		#index scopes @pages by subject
+		#new uses subject to pre-select the subject
+		All redirects preserve :subject_id
+	- app/views/pages
+		All links and form actions preserve :subject_id

@@ -1,0 +1,16 @@
+<% @page_title = "Edit '#{@subject.name}'" %>
+<%= link_to("<< Back to index", subjects_path, :class => 'back-link')
+%>
+
+<div class="subjects edit">
+	<h2>Update Subject</h2>
+	<%= form_for(@subject, :url => subject_path, :method => 'patch') do |f| %>
+	<!--You can ignore ":url => subjects_path, :method => 'patch'" because it is automatically done by rails-->
+		<!-- rendering partial layouts -->
+		<%= render(:partial => 'form', :locals => {:f => f}) %>
+		
+		<div class="form-buttons">
+			<%= f.submit("Update Subject") %>
+		</div>
+	<% end %>
+</div>
